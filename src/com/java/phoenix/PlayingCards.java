@@ -14,10 +14,10 @@ public class PlayingCards {
 		list.add("2"); list.add("3"); list.add("4"); list.add("5"); list.add("6"); list.add("7");
 		list.add("8"); list.add("9"); list.add("10"); list.add("J"); list.add("Q"); list.add("K");
 		System.out.println("Before Playing Cards"+ list);
-			List shuffledlist =PlayingCards.shuffle(list);
-			List l1 = PlayingCards.shuffle(shuffledlist);
-			System.out.println("New shuffled list "+l1);
-			
+			//List shuffledlist =PlayingCards.shuffle(list);
+			//List l1 = PlayingCards.shuffle(shuffledlist);
+			//System.out.println("New shuffled list "+l1);
+			PlayingCards.cut(list, 9);
 	}
 
 	public  static List shuffle(List<String> list){
@@ -55,6 +55,17 @@ public class PlayingCards {
 		System.out.println("New list "+list);
 		return list;
 	}
-	
+	public static void cut(List list, int cardNumber){
+		List topList = list.subList(cardNumber, list.size());
+		System.out.println(list.size());
+		List bottomList = list.subList(0, cardNumber);
+		//list.clear();
+		//System.out.println("Before"+list);
+		List finalList = new ArrayList();
+		finalList.addAll(topList);
+		finalList.addAll(bottomList);
+		System.out.println("FinalList"+finalList);
+		
+	}
 
 }
