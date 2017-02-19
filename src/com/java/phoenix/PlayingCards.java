@@ -17,7 +17,17 @@ public class PlayingCards {
 			//List shuffledlist =PlayingCards.shuffle(list);
 			//List l1 = PlayingCards.shuffle(shuffledlist);
 			//System.out.println("New shuffled list "+l1);
-			PlayingCards.cut(list, 9);
+			//List listCut = PlayingCards.cut(list, 7);
+			//System.out.println("Cut List"+listCut);
+		List dealList = PlayingCards.deal(list);
+	}
+
+	private static List deal(List list) {
+		// TODO Auto-generated method stub
+		System.out.println("Before Deal"+list);
+		list.remove(list.size()-1);
+		System.out.println("After Deal"+list);
+		return list;
 	}
 
 	public  static List shuffle(List<String> list){
@@ -55,7 +65,7 @@ public class PlayingCards {
 		System.out.println("New list "+list);
 		return list;
 	}
-	public static void cut(List list, int cardNumber){
+	public static List cut(List list, int cardNumber){
 		List topList = list.subList(cardNumber, list.size());
 		System.out.println(list.size());
 		List bottomList = list.subList(0, cardNumber);
@@ -65,6 +75,7 @@ public class PlayingCards {
 		finalList.addAll(topList);
 		finalList.addAll(bottomList);
 		System.out.println("FinalList"+finalList);
+		return finalList;
 		
 	}
 
